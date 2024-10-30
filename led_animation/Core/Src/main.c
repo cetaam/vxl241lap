@@ -24,6 +24,13 @@
 /* USER CODE BEGIN Includes */
 #include "FUNC.h"
 #include "timer.h"
+#include "button.h"
+#include "global.h"
+#include "led7_seg.h"
+#include "traffic_light.h"
+#include "fsm_auto.h"
+#include "fsm_manual.h"
+#include "fsm_setting.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -262,11 +269,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : BT0__Pin */
-  GPIO_InitStruct.Pin = BT0__Pin;
+  /*Configure GPIO pins : PA12 PA13 PA14 */
+  GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_PULLUP;
-  HAL_GPIO_Init(BT0__GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
 }
 
