@@ -6,6 +6,9 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/FUNC.c \
+../Core/Src/input_processing.c \
+../Core/Src/input_reading.c \
+../Core/Src/led_display.c \
 ../Core/Src/main.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
@@ -16,6 +19,9 @@ C_SRCS += \
 
 OBJS += \
 ./Core/Src/FUNC.o \
+./Core/Src/input_processing.o \
+./Core/Src/input_reading.o \
+./Core/Src/led_display.o \
 ./Core/Src/main.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
@@ -26,6 +32,9 @@ OBJS += \
 
 C_DEPS += \
 ./Core/Src/FUNC.d \
+./Core/Src/input_processing.d \
+./Core/Src/input_reading.d \
+./Core/Src/led_display.d \
 ./Core/Src/main.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \

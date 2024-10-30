@@ -4,7 +4,15 @@
  *  Created on: Oct 20, 2024
  *      Author: xjkpr
  */
+
+#include "input_reading.h"
 #include "timer.h"
+	void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
+		if( htim -> Instance == TIM2 ) {
+			button_reading () ;
+		}
+	}
+
 
 int timer_flag[2];
 int timer_counter[2];
@@ -25,3 +33,4 @@ void timer_init(){
 	set_timer(1, 100);
 
 }
+
