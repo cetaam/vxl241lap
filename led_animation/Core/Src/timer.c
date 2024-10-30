@@ -5,13 +5,7 @@
  *      Author: xjkpr
  */
 
-#include "input_reading.h"
 #include "timer.h"
-	void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
-		if( htim -> Instance == TIM2 ) {
-			button_reading () ;
-		}
-	}
 
 
 int timer_flag[2];
