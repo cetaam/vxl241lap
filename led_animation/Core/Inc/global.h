@@ -37,5 +37,5 @@
 
 
 extern int status;
-void init();
+void resetled();
 #endif /* INC_GLOBAL_H_ */

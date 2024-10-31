@@ -105,8 +105,12 @@ updateClockBuffer();
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+status = INIT;
   while (1)
   {
+
+		  fsm_auto_run();
+
 
 
 
