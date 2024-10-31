@@ -108,32 +108,8 @@ updateClockBuffer();
   while (1)
   {
 
-	  fsm_for_input_processing()  ;
 
 
-	  if(timer_flag[0]==1){
-		  update7SEG(led_index++);
-		  set_timer(0, 25);
-		  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_5);
-	  }
-	  if(timer_flag[1]==1){
-		  second++;
-		  updateClockBuffer();
-		  HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_4);
-		  set_timer(1, 100);
-
-
-	  }
-	  if(led_index>=MAX_LED) led_index=0;
-	  if(second>=60){
-		  second=0;
-		  minute++;
-	  }
-	  if(minute>=60){
-		  minute=0;
-		  hour++;
-	  }
-	  if(hour>=24) hour=0;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

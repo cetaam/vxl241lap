@@ -6,42 +6,54 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/FUNC.c \
-../Core/Src/input_processing.c \
-../Core/Src/input_reading.c \
-../Core/Src/led_display.c \
+../Core/Src/button.c \
+../Core/Src/fsm_auto.c \
+../Core/Src/fsm_manual.c \
+../Core/Src/fsm_setting.c \
+../Core/Src/global.c \
+../Core/Src/led7_seg.c \
 ../Core/Src/main.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
 ../Core/Src/syscalls.c \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f1xx.c \
-../Core/Src/timer.c 
+../Core/Src/timer.c \
+../Core/Src/traffic_light.c 
 
 OBJS += \
 ./Core/Src/FUNC.o \
-./Core/Src/input_processing.o \
-./Core/Src/input_reading.o \
-./Core/Src/led_display.o \
+./Core/Src/button.o \
+./Core/Src/fsm_auto.o \
+./Core/Src/fsm_manual.o \
+./Core/Src/fsm_setting.o \
+./Core/Src/global.o \
+./Core/Src/led7_seg.o \
 ./Core/Src/main.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
 ./Core/Src/syscalls.o \
 ./Core/Src/sysmem.o \
 ./Core/Src/system_stm32f1xx.o \
-./Core/Src/timer.o 
+./Core/Src/timer.o \
+./Core/Src/traffic_light.o 
 
 C_DEPS += \
 ./Core/Src/FUNC.d \
-./Core/Src/input_processing.d \
-./Core/Src/input_reading.d \
-./Core/Src/led_display.d \
+./Core/Src/button.d \
+./Core/Src/fsm_auto.d \
+./Core/Src/fsm_manual.d \
+./Core/Src/fsm_setting.d \
+./Core/Src/global.d \
+./Core/Src/led7_seg.d \
 ./Core/Src/main.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \
 ./Core/Src/syscalls.d \
 ./Core/Src/sysmem.d \
 ./Core/Src/system_stm32f1xx.d \
-./Core/Src/timer.d 
+./Core/Src/timer.d \
+./Core/Src/traffic_light.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

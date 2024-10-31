@@ -8,8 +8,8 @@
 #include "timer.h"
 
 
-int timer_flag[2];
-int timer_counter[2];
+int timer_flag[10];
+int timer_counter[10];
 
 void set_timer(int i, int durr){
 	timer_flag[i]=0;
