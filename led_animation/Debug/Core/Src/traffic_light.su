@@ -1,1 +1,3 @@
 traffic_light.c:9:6:led_state	16	static
+traffic_light.c:38:6:display7SEG	16	static
+traffic_light.c:133:6:update7SEG	16	static

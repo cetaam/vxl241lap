@@ -110,7 +110,7 @@ status = INIT;
   {
 
 		  fsm_auto_run();
-
+		  fsm_manual();
 
 
 

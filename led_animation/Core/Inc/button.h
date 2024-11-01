@@ -15,7 +15,7 @@
 
 
 
-extern int buttonflag[10];
+extern int buttonFlag[10];
 
 void getkeyInput();
 int isButtonPress(int i);

@@ -25,7 +25,7 @@ int key3_temp2 = NORMAL;
 int key3_temp3 = NORMAL;
 
 int timePress = 0;
-int buttonflag[10];
+int buttonFlag[10];
 
 void getkeyInput(){
 	//-----PROCESS BUTTON 1------------

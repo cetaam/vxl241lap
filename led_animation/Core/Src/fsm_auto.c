@@ -14,13 +14,15 @@ void fsm_auto_run(){
 		resetled();
 		status=AUTO_RED_GREEN;
 		set_timer(0, 50);
-		set_timer(1, 500);
+		set_timer(1, 200);
 		break;
 	case AUTO_RED_GREEN:
 		led_state(RED_GREEN);
 
 		if(isButtonPress(0)){
 			status = MANUAL_RED_GREEN;
+			set_timer(1, 1000);
+
 		}
 		if(timer_flag[1]==1){
 			status=AUTO_RED_YELLOW;
@@ -33,10 +35,11 @@ void fsm_auto_run(){
 
 		if(isButtonPress(0)){
 			status = MANUAL_RED_YELLOW;
+			set_timer(1, 1000);
 		}
 		if(timer_flag[1]==1){
 			status = AUTO_GREEN_RED;
-			set_timer(1, 500);
+			set_timer(1, 200);
 		}
 		break;
 	case AUTO_GREEN_RED:
@@ -44,6 +47,7 @@ void fsm_auto_run(){
 
 		if(isButtonPress(0)){
 			status = MANUAL_GREEN_RED;
+			set_timer(1, 1000);
 		}
 		if(timer_flag[1]==1){
 			status = AUTO_YELLOW_RED;
@@ -55,11 +59,14 @@ void fsm_auto_run(){
 
 		if(isButtonPress(0)){
 			status = MANUAL_YELLOW_RED;
+			set_timer(1, 1000);
 		}
 		if(timer_flag[1]==1){
 			status = AUTO_RED_GREEN;
-			set_timer(1,500);
+			set_timer(1,200);
 		}
+		break;
+	default:
 		break;
 	case SET_RED:
 		resetled();
