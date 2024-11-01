@@ -86,6 +86,12 @@ void Error_Handler(void);
 #define LG_Y_GPIO_Port GPIOA
 #define LY_Y_Pin GPIO_PIN_11
 #define LY_Y_GPIO_Port GPIOA
+#define BT0_Pin GPIO_PIN_12
+#define BT0_GPIO_Port GPIOA
+#define BT1_Pin GPIO_PIN_13
+#define BT1_GPIO_Port GPIOA
+#define BT2_Pin GPIO_PIN_14
+#define BT2_GPIO_Port GPIOA
 #define S3_Pin GPIO_PIN_3
 #define S3_GPIO_Port GPIOB
 #define S4_Pin GPIO_PIN_4

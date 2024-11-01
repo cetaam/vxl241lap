@@ -17,37 +17,45 @@ void fsm_auto_run(){
 		set_timer(1, 500);
 		break;
 	case AUTO_RED_GREEN:
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, SET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, RESET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, SET);
+		led_state(RED_GREEN);
+
+		if(isButtonPress(0)){
+			status = MANUAL_RED_GREEN;
+		}
 		if(timer_flag[1]==1){
 			status=AUTO_RED_YELLOW;
 			set_timer(1, 200);
 		}
+
 		break;
 	case AUTO_RED_YELLOW:
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, RESET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, SET);
+		led_state(RED_YELLOW);
+
+		if(isButtonPress(0)){
+			status = MANUAL_RED_YELLOW;
+		}
 		if(timer_flag[1]==1){
 			status = AUTO_GREEN_RED;
 			set_timer(1, 500);
 		}
 		break;
 	case AUTO_GREEN_RED:
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, RESET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, SET);
+		led_state(GREEN_RED);
 
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, SET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11,RESET);
+		if(isButtonPress(0)){
+			status = MANUAL_GREEN_RED;
+		}
 		if(timer_flag[1]==1){
 			status = AUTO_YELLOW_RED;
 			set_timer(1, 200);
 		}
 		break;
 	case AUTO_YELLOW_RED:
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, RESET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, SET);
+		led_state(YELLOW_RED);
+
+		if(isButtonPress(0)){
+			status = MANUAL_YELLOW_RED;
+		}
 		if(timer_flag[1]==1){
 			status = AUTO_RED_GREEN;
 			set_timer(1,500);
@@ -55,6 +63,8 @@ void fsm_auto_run(){
 		break;
 	case SET_RED:
 		resetled();
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_6);
+		HAL_GPIO_TogglePin(GPIOA, GPIO_PIN_9);
 
 		break;
 	case SET_GREEN:

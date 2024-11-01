@@ -8,6 +8,11 @@
 #ifndef INC_GLOBAL_H_
 #define INC_GLOBAL_H_
 
+#define PRESSED 0
+#define NORMAL 1
+
+
+
 #define INIT 			1
 #define AUTO_RED_GREEN 	2
 #define AUTO_RED_YELLOW 3
