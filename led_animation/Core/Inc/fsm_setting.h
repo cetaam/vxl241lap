@@ -8,6 +8,7 @@
 #ifndef INC_FSM_SETTING_H_
 #define INC_FSM_SETTING_H_
 
-#include "main.h"
+#include "global.h"
+extern int durration[10];
 
 #endif /* INC_FSM_SETTING_H_ */

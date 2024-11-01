@@ -8,16 +8,18 @@
 
 #include "fsm_manual.h"
 
-void fsm_manual(){
+
+void fsm_manual_run(){
 	switch(status){
 	case MANUAL_RED_GREEN:
 		if(timer_flag[1] ==1){
 			status = AUTO_RED_GREEN;
 			return;
 		}
-		if(isButtonPress(1)){
-			status = MANUAL_RED_YELLOW;
-			set_timer(1, 500);
+				if(isButtonPress(1)){
+					led_state(RED_YELLOW);
+					status = MANUAL_RED_YELLOW;
+					set_timer(1, 500);
 		}
 		break;
 	case MANUAL_RED_YELLOW:
@@ -26,6 +28,7 @@ void fsm_manual(){
 					return;
 				}
 				if(isButtonPress(1)){
+					led_state(GREEN_RED);
 					status = MANUAL_GREEN_RED;
 					set_timer(1, 500);
 				}
@@ -36,6 +39,7 @@ void fsm_manual(){
 					return;
 				}
 				if(isButtonPress(1)){
+					led_state(YELLOW_RED);
 					status = MANUAL_YELLOW_RED;
 					set_timer(1, 500);
 				}
@@ -46,6 +50,7 @@ void fsm_manual(){
 					return;
 				}
 				if(isButtonPress(1)){
+					led_state(RED_GREEN);
 					status = MANUAL_RED_GREEN;
 					set_timer(1, 500);
 				}
@@ -53,7 +58,5 @@ void fsm_manual(){
 	default:
 		break;
 	}
-	if(isButtonPress(0)){
-		status = SLOW;
-	}
+
 }

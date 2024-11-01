@@ -16,6 +16,7 @@
 
 
 extern int buttonFlag[10];
+extern int timePress;
 
 void getkeyInput();
 int isButtonPress(int i);

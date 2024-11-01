@@ -29,7 +29,18 @@ void led_state(int i){
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, RESET);
 		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, SET);
 		break;
-
+	case RED_SET:
+		break;
+	case GREEN_SET:
+		break;
+	case YELLOW_SET:
+		break;
+	case MANUAL_SET:
+		break;
+	case SLOW:
+		break;
+	default:
+		break;
 	}
 }
 int led_index;

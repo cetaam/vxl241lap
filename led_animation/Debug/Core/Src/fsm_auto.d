@@ -24,7 +24,8 @@ Core/Src/fsm_auto.o: ../Core/Src/fsm_auto.c ../Core/Inc/fsm_auto.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
- ../Core/Inc/timer.h ../Core/Inc/button.h ../Core/Inc/traffic_light.h
+ ../Core/Inc/timer.h ../Core/Inc/button.h ../Core/Inc/traffic_light.h \
+ ../Core/Inc/fsm_setting.h
 
 ../Core/Inc/fsm_auto.h:
 
@@ -85,3 +86,5 @@ Core/Src/fsm_auto.o: ../Core/Src/fsm_auto.c ../Core/Inc/fsm_auto.h \
 ../Core/Inc/button.h:
 
 ../Core/Inc/traffic_light.h:
+
+../Core/Inc/fsm_setting.h:

@@ -25,10 +25,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
  ../Core/Inc/FUNC.h ../Core/Inc/main.h ../Core/Inc/timer.h \
  ../Core/Inc/button.h ../Core/Inc/global.h ../Core/Inc/timer.h \
- ../Core/Inc/button.h ../Core/Inc/global.h ../Core/Inc/led7_seg.h \
- ../Core/Inc/traffic_light.h ../Core/Inc/fsm_auto.h \
- ../Core/Inc/traffic_light.h ../Core/Inc/fsm_manual.h \
- ../Core/Inc/fsm_setting.h
+ ../Core/Inc/button.h ../Core/Inc/traffic_light.h ../Core/Inc/global.h \
+ ../Core/Inc/led7_seg.h ../Core/Inc/traffic_light.h \
+ ../Core/Inc/fsm_auto.h ../Core/Inc/fsm_setting.h \
+ ../Core/Inc/fsm_manual.h ../Core/Inc/fsm_setting.h
 
 ../Core/Inc/main.h:
 
@@ -94,6 +94,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/button.h:
 
+../Core/Inc/traffic_light.h:
+
 ../Core/Inc/global.h:
 
 ../Core/Inc/led7_seg.h:
@@ -102,7 +104,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 
 ../Core/Inc/fsm_auto.h:
 
-../Core/Inc/traffic_light.h:
+../Core/Inc/fsm_setting.h:
 
 ../Core/Inc/fsm_manual.h:
 

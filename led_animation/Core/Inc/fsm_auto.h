@@ -11,6 +11,7 @@
 
 #include "global.h"
 #include "traffic_light.h"
+#include "fsm_setting.h"
 
 
 void fsm_auto_run();

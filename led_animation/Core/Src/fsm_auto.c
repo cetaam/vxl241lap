@@ -7,12 +7,15 @@
 
 
 #include "fsm_auto.h"
+int durration[10];
 
 void fsm_auto_run(){
 	switch (status){
 	case INIT:
 		resetled();
 		status=AUTO_RED_GREEN;
+		durration[0] = 200;
+		durration[1] = 200;
 		set_timer(0, 50);
 		set_timer(1, 200);
 		break;

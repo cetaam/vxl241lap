@@ -36,11 +36,19 @@
 #define GREEN_RED	4
 #define	YELLOW_RED 	5
 
+#define RED_SET 	42
+#define GREEN_SET 	43
+#define YELLOW_SET 	44
+
+#define MANUAL_SET	45
+
 #include "main.h"
 #include "timer.h"
 #include "button.h"
+#include "traffic_light.h"
 
 
 extern int status;
+
 void resetled();
 #endif /* INC_GLOBAL_H_ */
