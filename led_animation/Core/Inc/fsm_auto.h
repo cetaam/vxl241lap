@@ -11,6 +11,7 @@
 
 #include "global.h"
 #include "traffic_light.h"
+#include "led7_seg.h"
 #include "fsm_setting.h"
 
 

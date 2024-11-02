@@ -12,11 +12,8 @@
 #include "global.h"
 
 
-extern int led_index;
-extern int led_buffer[4];
 
-void display7SEG(int num);
-void update7SEG(int index);
-
-void led_state(int i);
+void led_traffic(int i);
+void led_traffic_back(int i);
+void led_setting(int i);
 #endif /* INC_TRAFFIC_LIGHT_H_ */

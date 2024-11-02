@@ -19,10 +19,11 @@
 #define AUTO_GREEN_RED 	4
 #define AUTO_YELLOW_RED 5
 
-#define SET_RED			10
 #define SET_GREEN		11
 #define SET_YELLOW		12
-#define SET_CHECK		13
+#define SET_MANUAL		13
+
+
 
 #define MANUAL_RED_GREEN	32
 #define MANUAL_RED_YELLOW	33
@@ -36,11 +37,11 @@
 #define GREEN_RED	4
 #define	YELLOW_RED 	5
 
-#define RED_SET 	42
-#define GREEN_SET 	43
-#define YELLOW_SET 	44
 
-#define MANUAL_SET	45
+#define DEFAULT_GREEN			200
+#define DEFAULT_YELLOW 			200
+
+#define DEFAULT_MANUAL_WAIT 	200
 
 #include "main.h"
 #include "timer.h"
@@ -49,6 +50,9 @@
 
 
 extern int status;
+extern int prev_status;
 
 void resetled();
+void reset7leg();
+void updatePrevStatus();
 #endif /* INC_GLOBAL_H_ */

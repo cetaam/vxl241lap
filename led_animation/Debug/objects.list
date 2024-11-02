@@ -1,4 +1,3 @@
-"./Core/Src/FUNC.o"
 "./Core/Src/button.o"
 "./Core/Src/fsm_auto.o"
 "./Core/Src/fsm_manual.o"

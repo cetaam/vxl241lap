@@ -22,7 +22,6 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "FUNC.h"
 #include "timer.h"
 #include "button.h"
 #include "global.h"
@@ -66,7 +65,6 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void updateClockBuffer();
 /* USER CODE END 0 */
 
 /**
@@ -111,7 +109,7 @@ status = INIT;
 
 		  fsm_auto_run();
 		  fsm_manual_run();
-
+		  fsm_setting_run();
 
 
     /* USER CODE END WHILE */
@@ -258,12 +256,7 @@ void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
 	getkeyInput();
 
 }
-void updateClockBuffer(){
-	led_buffer[3]=minute%10;
-	led_buffer[2]=minute/10;
-	led_buffer[1]=hour%10;
-	led_buffer[0]=hour/10;
-}
+
 /* USER CODE END 4 */
 
 /**
