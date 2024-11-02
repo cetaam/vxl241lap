@@ -14,5 +14,5 @@
 
 
 void fsm_auto_run();
-void counter_reset();
+void countdown();
 #endif /* INC_FSM_AUTO_H_ */

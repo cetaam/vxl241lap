@@ -54,6 +54,6 @@ extern int status;
 extern int prev_status;
 
 void resetled();
-void reset7seg();
+void reset7leg();
 void updatePrevStatus();
 #endif /* INC_GLOBAL_H_ */
