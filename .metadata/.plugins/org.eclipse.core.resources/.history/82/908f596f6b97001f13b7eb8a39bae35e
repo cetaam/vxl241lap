@@ -1,0 +1,22 @@
+/*
+ * traffic_light.c
+ *
+ *  Created on: Oct 30, 2024
+ *      Author: xjkpr
+ */
+#include "traffic_light.h"
+
+void light_state(int i){
+	switch (i){
+	case 0:
+
+		break;
+	case 1:
+		break;
+	case 2:
+		break;
+	case 3:
+		break;
+
+	}
+}
