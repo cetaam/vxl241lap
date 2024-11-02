@@ -5,15 +5,16 @@
  *      Author: xjkpr
  */
 #include "led7_seg.h"
-int counter[2];
+int counter[10];
 int led_buffer[4];
 
 
-void updateClockBuffer(int counter[]){
-	led_buffer[3]= counter[0]%10;
-	led_buffer[2]= counter[0]/10;
-	led_buffer[1]= counter[1]%10;
-	led_buffer[0]= counter[1]/10;
+void updateClockBuffer(int num_X,int num_Y){
+	led_buffer[3]= num_Y%10;
+	led_buffer[2]= num_Y/10;
+
+	led_buffer[1]= num_X%10;
+	led_buffer[0]= num_X/10;
 }
 void update7SEG(int index){
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, SET);

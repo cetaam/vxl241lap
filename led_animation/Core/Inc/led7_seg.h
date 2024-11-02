@@ -10,7 +10,7 @@
 
 #include "global.h"
 
-extern int counter[2];
+extern int counter[10];
 
 extern int led_index;
 extern int led_buffer[4];

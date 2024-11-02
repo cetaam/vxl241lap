@@ -47,6 +47,7 @@
 #include "timer.h"
 #include "button.h"
 #include "traffic_light.h"
+#include "led7_seg.h"
 
 
 extern int status;

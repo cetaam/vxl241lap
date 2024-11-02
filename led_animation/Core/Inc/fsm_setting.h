@@ -9,7 +9,6 @@
 #define INC_FSM_SETTING_H_
 
 #include "global.h"
-#include "traffic_light.h"
 extern int duration[10];
 extern int temp;
 

@@ -13,7 +13,7 @@ int temp=0;
 
 void fsm_setting_run(){
 	switch(status){
-	case SET_GREEN:
+	case SET_GREEN://green<=98
 		led_setting(SET_GREEN);
 		if(isButtonPress(1)){
 			temp++;
@@ -34,7 +34,7 @@ void fsm_setting_run(){
 		}
 
 		break;
-	case SET_YELLOW://+CHECK
+	case SET_YELLOW://yellow<=99-green
 		led_setting(SET_YELLOW);
 		if(isButtonPress(1)){
 			temp++;

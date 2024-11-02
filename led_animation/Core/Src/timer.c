@@ -16,7 +16,6 @@ void set_timer(int i, int durr){
 	timer_counter[i]=durr;
 }
 void timerrun(int i){
-
 		timer_counter[i]--;
 		if(timer_counter[i]<=0)
 			timer_flag[i]=1;

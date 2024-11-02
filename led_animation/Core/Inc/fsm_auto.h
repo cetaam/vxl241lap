@@ -10,10 +10,9 @@
 
 
 #include "global.h"
-#include "traffic_light.h"
-#include "led7_seg.h"
 #include "fsm_setting.h"
 
 
 void fsm_auto_run();
+void countdown();
 #endif /* INC_FSM_AUTO_H_ */
