@@ -107,9 +107,9 @@ status = INIT;
   while (1)
   {
 
-		  fsm_auto_run();
-		  fsm_manual_run();
-		  fsm_setting_run();
+		 fsm_auto_run();
+		 fsm_manual_run();
+		 fsm_setting_run();
 
 
     /* USER CODE END WHILE */
@@ -254,8 +254,11 @@ void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
 	timerrun(0);
 	timerrun(1);
 	timerrun(2);
+	timerrun(3);
+	timerrun(5);
+	timerrun(6);
+	timerrun(7);
 	getkeyInput();
-
 }
 
 /* USER CODE END 4 */

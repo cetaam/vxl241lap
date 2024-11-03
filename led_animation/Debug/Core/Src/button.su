@@ -1,2 +1,2 @@
-button.c:30:6:getkeyInput	8	static
-button.c:98:5:isButtonPress	16	static
+button.c:17:6:getkeyInput	8	static
+button.c:105:5:isButtonPress	16	static

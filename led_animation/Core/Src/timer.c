@@ -8,7 +8,7 @@
 #include "timer.h"
 
 
-int timer_flag[10];
+int timer_flag[10]={0,0,0,0,0,1,1,1,0,0};
 int timer_counter[10];
 
 void set_timer(int i, int durr){
@@ -24,6 +24,7 @@ void timerrun(int i){
 void timer_init(){
 	set_timer(0, 25);
 	set_timer(1, 100);
+
 
 }
 
