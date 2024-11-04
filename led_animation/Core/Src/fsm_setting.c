@@ -20,6 +20,8 @@ void fsm_setting_run(){
 			if(temp>98){
 				temp=0;
 			}
+		updateClockBuffer(0, temp);
+
 		}
 		if(isButtonPress(0)){
 			status = SET_YELLOW;
@@ -38,18 +40,22 @@ void fsm_setting_run(){
 		led_setting(SET_YELLOW);
 		if(isButtonPress(1)){
 			temp++;
-			if(temp>(99-duration[1])){
+			if(temp>(99-duration[1]/100)){
 				temp=0;
 			}
+			updateClockBuffer(0, temp);
 		}
 		if(isButtonPress(0)){
 			status =prev_status;
 			led_traffic_back(status);
 			duration[2]=temp*100;
 			temp=0;
-			if(!duration[2]){
+			if(duration[2]<=0){
 				duration[2]=DEFAULT_YELLOW;
 			}
+			counter_reset();
+			set_timer(0, 25);
+			set_timer(2, 100);
 		}
 
 		if(isButtonPress(2)){
@@ -70,6 +76,7 @@ void fsm_setting_run(){
 			if(!duration[0]){
 				duration[0]=DEFAULT_MANUAL_WAIT;
 			}
+			counter_reset();
 		}
 
 		if(isButtonPress(2)){
@@ -78,7 +85,18 @@ void fsm_setting_run(){
 
 		break;
 	default:
-		break;
+		return;
 
+
+	}
+	if(timer_flag[2]==1){
+		updateClockBuffer(0, temp);
+		set_timer(2, 100);
+		set_timer(0, 24);
+		led_index=0;
+	}
+	if(timer_flag[0]==1){
+		update7SEG(led_index++);
+		set_timer(0, 24);
 	}
 }

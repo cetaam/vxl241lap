@@ -1,3 +1,2 @@
 global.c:13:6:resetled	8	static
 global.c:26:6:reset7seg	8	static
-global.c:35:6:updatePrevStatus	4	static

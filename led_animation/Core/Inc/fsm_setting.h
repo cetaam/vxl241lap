@@ -9,6 +9,8 @@
 #define INC_FSM_SETTING_H_
 
 #include "global.h"
+#include "fsm_auto.h"
+#include "fsm_manual.h"
 extern int duration[10];
 extern int temp;
 

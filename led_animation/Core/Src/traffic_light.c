@@ -34,13 +34,16 @@ void led_traffic(int i){
 	}
 }
 void led_setting(int i){
-	resetled();
+
 	switch(i){
 case SET_GREEN:
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7,SET);
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10,SET);
 	break;
 case SET_YELLOW:
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7,RESET);
+	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10,RESET);
+
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8,SET);
 	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11,SET);
 	break;

@@ -16,10 +16,11 @@ void set_timer(int i, int durr){
 	timer_counter[i]=durr;
 }
 void timerrun(int i){
+	if(timer_counter[i]>0){
 		timer_counter[i]--;
-		if(timer_counter[i]<0)
+		if(timer_counter[i]<=0)
 			timer_flag[i]=1;
-
+	}
 }
 void timer_init(){
 	set_timer(0, 25);

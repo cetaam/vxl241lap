@@ -14,14 +14,14 @@ void fsm_manual_run(){
 	case MANUAL_RED_GREEN:
 
 		if(timer_flag[1] ==1){
-			updatePrevStatus();
+			prev_status=status;
 			status = AUTO_RED_GREEN;
 			set_timer(1, duration[1]);
 			return;
 		}
 		if(isButtonPress(1)){
 			led_traffic(RED_YELLOW);
-			updatePrevStatus();
+			prev_status=status;
 			status = MANUAL_RED_YELLOW;
 			set_timer(1, duration[0]);
 		}
@@ -29,14 +29,14 @@ void fsm_manual_run(){
 	case MANUAL_RED_YELLOW:
 
 		if(timer_flag[1] ==1){
-			updatePrevStatus();
+			prev_status=status;
 			status = AUTO_RED_YELLOW;
 			set_timer(1, duration[2]);
 			return;
 		}
 		if(isButtonPress(1)){
 			led_traffic(GREEN_RED);
-			updatePrevStatus();
+			prev_status=status;
 			status = MANUAL_GREEN_RED;
 			set_timer(1, duration[0]);
 		}
@@ -44,14 +44,14 @@ void fsm_manual_run(){
 	case MANUAL_GREEN_RED:
 
 		if(timer_flag[1] ==1){
-			updatePrevStatus();
+			prev_status=status;
 			status = AUTO_GREEN_RED;
 			set_timer(1, duration[1]);
 			return;
 				}
 		if(isButtonPress(1)){
 			led_traffic(YELLOW_RED);
-			updatePrevStatus();
+			prev_status=status;
 			status = MANUAL_YELLOW_RED;
 			set_timer(1, duration[0]);
 		}
@@ -59,23 +59,24 @@ void fsm_manual_run(){
 	case MANUAL_YELLOW_RED:
 
 		if(timer_flag[1] ==1){
-			updatePrevStatus();
+			prev_status=status;
 			status = AUTO_YELLOW_RED;
 			set_timer(1, duration[2]);
 			return;
 		}
 		if(isButtonPress(1)){
 			led_traffic(RED_GREEN);
-			updatePrevStatus();
+			prev_status=status;
 			status = MANUAL_RED_GREEN;
 			set_timer(1, duration[0]);
 		}
 		break;
 	default:
+		return;
 		break;
 		}
 	if(isButtonPress(2)){
-		updatePrevStatus();
+		prev_status=status;
 		status= SET_MANUAL;
 		return;
 	}

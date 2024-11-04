@@ -1,3 +1,3 @@
 timer.c:14:6:set_timer	16	static
 timer.c:18:6:timerrun	16	static
-timer.c:24:6:timer_init	8	static
+timer.c:25:6:timer_init	8	static

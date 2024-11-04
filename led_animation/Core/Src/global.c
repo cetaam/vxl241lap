@@ -32,7 +32,4 @@ void reset7seg(){
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, RESET);
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, RESET);
 }
-void updatePrevStatus(){
-	if(prev_status!=status)
-	prev_status=status;
-}
+
