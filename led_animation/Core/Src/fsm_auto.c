@@ -35,22 +35,19 @@ void fsm_auto_run(){
 		}
 		if(timer_flag[1]==1){
 			prev_status=status;
-			set_timer(1, duration[2]);
 			status=AUTO_RED_YELLOW;
-			updateClockBuffer(counter[3], --counter[2]);
+			updateClockBuffer(--counter[2], counter[2]);
+			set_timer(1, duration[2]);
+			set_timer(2,100);
+			set_timer(0, 24);
+			led_traffic(RED_YELLOW);
 		}
-		led_traffic(RED_GREEN);
-			if(isButtonPress(0)){
-				prev_status=status;
-				counter_reset();
-				status = MANUAL_RED_GREEN;
-				set_timer(1, duration[0]);
-			}
+
 		break;
 	case AUTO_RED_YELLOW:
 
 		if(timer_flag[2]==1){//every 1s
-			updateClockBuffer(--counter[3], --counter[2]);
+			updateClockBuffer(--counter[2], counter[2]);
 			set_timer(2, 100);
 			set_timer(0, 24);
 			led_index=0;
@@ -58,17 +55,14 @@ void fsm_auto_run(){
 		if(timer_flag[1]==1){
 			prev_status=status;
 			status = AUTO_GREEN_RED;
-			set_timer(1, duration[1]);
 			counter_reset();
 			updateClockBuffer(--counter[1], --counter[3]);
+			set_timer(1, duration[1]);
+			set_timer(2,100);
+			set_timer(0, 24);
+			led_traffic(GREEN_RED);
 		}
-			led_traffic(RED_YELLOW);
-			if(isButtonPress(0)){
-				prev_status=status;
-				counter_reset();
-				status = MANUAL_RED_YELLOW;
-				set_timer(1, duration[0]);
-			}
+
 		break;
 
 	case AUTO_GREEN_RED:
@@ -81,20 +75,17 @@ void fsm_auto_run(){
 		if(timer_flag[1]==1){
 			prev_status=status;
 			status = AUTO_YELLOW_RED;
-			updateClockBuffer(--counter[2], counter[3]);
+			updateClockBuffer(--counter[2], counter[2]);
 			set_timer(1, duration[2]);
+			set_timer(2,100);
+			set_timer(0, 24);
+			led_traffic(YELLOW_RED);
 		}
-			led_traffic(GREEN_RED);
-			if(isButtonPress(0)){
-				prev_status=status;
-				counter_reset();
-				status = MANUAL_GREEN_RED;
-				set_timer(1, duration[0]);
-			}
+
 		break;
 	case AUTO_YELLOW_RED:
 		if(timer_flag[2]==1){//every 1s
-			updateClockBuffer(--counter[2], --counter[3]);
+			updateClockBuffer(--counter[2], counter[2]);
 			set_timer(2, 100);
 			set_timer(0, 24);
 			led_index=0;
@@ -102,39 +93,40 @@ void fsm_auto_run(){
 		if(timer_flag[1]==1){
 			prev_status=status;
 			status = AUTO_RED_GREEN;
-			set_timer(1,duration[1]);
 			counter_reset();
 			updateClockBuffer(--counter[3], --counter[1]);
+			set_timer(1,duration[1]);
+			set_timer(2,100);
+			set_timer(0, 24);
 			led_traffic(RED_GREEN);
 		}
-			led_traffic(YELLOW_RED);
-			if(isButtonPress(0)){
-				prev_status=status;
-				counter_reset();
-				status = MANUAL_YELLOW_RED;
-				set_timer(1, duration[0]);
-				buttonFlag[0]=0;
-			}
+
 		break;
 	default:
 		return;
 		break;
 	}
-
-		if(isButtonPress(2)){
-			prev_status=status;
-			counter_reset();
-			resetled();
-			reset7seg();
-			status= SET_GREEN;
-			buttonFlag[2]=0;
-			return;
-		}
-		if(timer_flag[0]==1){
-			update7SEG(led_index++);
-			set_timer(0, 24);
-		}
-
+	//SWITCH TO MANUAL
+	if(isButtonPress(0)){
+		counter_reset();
+		prev_status=status;
+		status += 30;//correspond status in manual
+		set_timer(1, duration[0]);
+		return;
+	}
+	//SWITCH TO SETTING
+	if(isButtonPress(2)){
+		prev_status=status;
+		counter_reset();
+		resetled();
+		reset7seg();
+		status= SET_GREEN;
+		return;
+	}
+	if(timer_flag[0]==1){
+		update7SEG(led_index++);
+		set_timer(0, 24);
+	}
 
 }
 
