@@ -12,6 +12,7 @@
 #include "global.h"
 #include "fsm_setting.h"
 
+extern int counter[10];
 
 void fsm_auto_run();
 void counter_reset();

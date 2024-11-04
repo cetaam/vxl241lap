@@ -38,10 +38,6 @@
 #define	YELLOW_RED 	5
 
 
-#define DEFAULT_GREEN			200
-#define DEFAULT_YELLOW 			200
-
-#define DEFAULT_MANUAL_WAIT 	200
 
 #include "main.h"
 #include "timer.h"
@@ -52,6 +48,7 @@
 
 extern int status;
 extern int prev_status;
+extern int counter[10];
 
 void resetled();
 void reset7seg();

@@ -5,7 +5,6 @@
  *      Author: xjkpr
  */
 #include "led7_seg.h"
-int counter[10];
 int led_buffer[4];
 
 

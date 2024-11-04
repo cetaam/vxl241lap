@@ -9,7 +9,7 @@
 #include "global.h"
 int status = 1;
 int prev_status=1;
-
+int counter[10];
 void resetled(){
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, RESET);
 			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, RESET);

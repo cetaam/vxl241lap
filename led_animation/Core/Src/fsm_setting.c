@@ -7,7 +7,7 @@
 
 
 #include "fsm_setting.h"
-int duration[10];
+
 int temp=0;
 
 
@@ -25,10 +25,13 @@ void fsm_setting_run(){
 		}
 		if(isButtonPress(0)){
 			status = SET_YELLOW;
-			duration[1]=temp*100;
-			temp=0;
-			if(!duration[1]){
-				duration[1]=DEFAULT_GREEN;
+			temp*=100;
+			//SWAP
+			temp = temp^duration[1];
+			duration[1] = temp^duration[1];
+			temp = temp^duration[1];
+			if(duration[1]<=0){//no changes=old value
+				duration[1]=temp;
 			}
 		}
 		if(isButtonPress(2)){
@@ -48,13 +51,16 @@ void fsm_setting_run(){
 		if(isButtonPress(0)){
 			status =prev_status;
 			led_traffic_back(status);
-			duration[2]=temp*100;
-			temp=0;
+			temp*=100;
+			//SWAP
+			temp = temp^duration[2];
+			duration[2] = temp^duration[2];
+			temp = temp^duration[2];
 			if(duration[2]<=0){
-				duration[2]=DEFAULT_YELLOW;
+				duration[2]=temp;
 			}
 			counter_reset();
-			set_timer(0, 25);
+			set_timer(0, 24);
 			set_timer(2, 100);
 		}
 
@@ -71,12 +77,14 @@ void fsm_setting_run(){
 		}
 		if(isButtonPress(0)){
 			status = prev_status;
-			duration[1]=temp*100;
-			temp=0;
+			temp*=100;
+			//SWAP
+			temp = temp^duration[0];
+			duration[0] = temp^duration[0];
+			temp = temp^duration[0];
 			if(!duration[0]){
-				duration[0]=DEFAULT_MANUAL_WAIT;
+				duration[0]=temp;
 			}
-			counter_reset();
 		}
 
 		if(isButtonPress(2)){
