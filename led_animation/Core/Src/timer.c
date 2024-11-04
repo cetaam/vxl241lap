@@ -22,10 +22,9 @@ void timerrun(int i){
 			timer_flag[i]=1;
 	}
 }
-void timer_init(){
-	set_timer(0, 25);
-	set_timer(1, 100);
-
+void timer_restart(){
+	set_timer(0, 24);
+	set_timer(2, 100);
 
 }
 
