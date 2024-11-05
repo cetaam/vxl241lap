@@ -18,6 +18,9 @@ extern int led_buffer[4];
 void display7SEG(int num);
 void update7SEG(int index);
 
+void resetled();
+void reset7seg();
+
 
 
 void updateClockBuffer();

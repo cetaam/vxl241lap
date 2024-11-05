@@ -9,7 +9,7 @@
 #define INC_FSM_MANUAL_H_
 
 #include "global.h"
-#include "fsm_setting.h"
+
 
 void fsm_manual_run();
 

@@ -10,7 +10,7 @@
 
 
 #include "global.h"
-#include "fsm_setting.h"
+
 
 void fsm_auto_run();
 void counter_reset();

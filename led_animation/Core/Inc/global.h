@@ -54,7 +54,5 @@ extern int time_yellow;
 extern int time_manual;
 
 
-void resetled();
-void reset7seg();
-void updatePrevStatus();
+
 #endif /* INC_GLOBAL_H_ */
