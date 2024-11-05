@@ -45,7 +45,7 @@ void fsm_manual_run(){
 		return;
 
 		}
-	if(timer_flag[1] ==1){
+	if(timer_flag[1] ==1 || isButtonPress(0)){
 		status -=31;
 		return;
 	}

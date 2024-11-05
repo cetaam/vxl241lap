@@ -47,8 +47,7 @@
 
 
 extern int status;
-extern int duration[10];
-extern int counter[10];
+extern int counter[3];
 extern int time_green;
 extern int time_yellow;
 extern int time_manual;
