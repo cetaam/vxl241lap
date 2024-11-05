@@ -50,9 +50,9 @@
 TIM_HandleTypeDef htim2;
 
 /* USER CODE BEGIN PV */
-int led_index;
-int led_buffer[4];
-int hour=15, minute=8, second = 50;
+
+
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/

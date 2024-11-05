@@ -9,14 +9,15 @@
 #include "fsm_setting.h"
 
 int temp=0;
-
+int increased=0;
 
 void fsm_setting_run(){
 	switch(status){
 	case SET_GREEN://green<=98
 		led_setting(SET_GREEN);
 		if(isButtonPress(1)){
-			temp++;
+			increased++;
+			temp+=1;
 			if(temp>98){
 				temp=0;
 			}
@@ -24,72 +25,79 @@ void fsm_setting_run(){
 
 		}
 		if(isButtonPress(0)){
+
 			status = SET_YELLOW;
 			temp*=100;
 			//SWAP
-			temp = temp^duration[1];
-			duration[1] = temp^duration[1];
-			temp = temp^duration[1];
-			if(duration[1]<=0){//no changes=old value
-				duration[1]=temp;
+			temp = temp^time_green;
+			time_green = temp^time_green;
+			temp = temp^time_green;
+			if(increased<1){//no changes=old value
+				time_green=temp;
+
 			}
-		}
-		if(isButtonPress(2)){
+			increased=0;
 			temp=0;
 		}
+
 
 		break;
 	case SET_YELLOW://yellow<=99-green
 		led_setting(SET_YELLOW);
 		if(isButtonPress(1)){
-			temp++;
-			if(temp>(99-duration[1]/100)){
+			increased++;
+			temp+=1;
+			if(temp>(99-time_green/100)){
 				temp=0;
 			}
 			updateClockBuffer(0, temp);
 		}
 		if(isButtonPress(0)){
-			status =prev_status;
-			led_traffic_back(status);
+			status =INIT;
+			resetled();
 			temp*=100;
 			//SWAP
-			temp = temp^duration[2];
-			duration[2] = temp^duration[2];
-			temp = temp^duration[2];
-			if(duration[2]<=0){
-				duration[2]=temp;
+			temp = temp^time_yellow;
+			time_yellow = temp^time_yellow;
+			temp = temp^time_yellow;
+			if(increased<1){
+				time_yellow=temp;
+
 			}
-			counter_reset();
-			set_timer(0, 24);
-			set_timer(2, 100);
+			increased=0;
+			temp=0;
+
 		}
 
-		if(isButtonPress(2)){
-			temp=0;
-		}
+
 		break;
 	case SET_MANUAL:
 		if(isButtonPress(1)){
+			increased++;
 			temp++;
 			if(temp>99){
 				temp=0;
 			}
+			updateClockBuffer(0, temp);
 		}
 		if(isButtonPress(0)){
-			status = prev_status;
+
+			status = MANUAL_RED_GREEN;
 			temp*=100;
 			//SWAP
-			temp = temp^duration[0];
-			duration[0] = temp^duration[0];
-			temp = temp^duration[0];
-			if(!duration[0]){
-				duration[0]=temp;
+			temp = temp^time_manual;
+			time_manual = temp^time_manual;
+			temp = temp^time_manual;
+			if(increased<1){
+				time_manual=temp;
 			}
-		}
-
-		if(isButtonPress(2)){
+			set_timer(1, time_manual);
+			reset7seg();
+			increased=0;
 			temp=0;
 		}
+
+
 
 		break;
 	default:
@@ -97,6 +105,10 @@ void fsm_setting_run(){
 
 
 	}
+	if(isButtonPress(2)){
+			increased=0;
+				temp=0;
+			}
 	if(timer_flag[2]==1){
 		updateClockBuffer(0, temp);
 		set_timer(2, 100);

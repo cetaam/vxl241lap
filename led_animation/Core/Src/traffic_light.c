@@ -51,31 +51,3 @@ default :
 	break;
 	}
 }
-void led_traffic_back(int i){
-	switch (i){
-	case RED_GREEN:
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, SET);
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_10, SET);
-
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, RESET);
-		break;
-	case RED_YELLOW:
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_6, SET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-		break;
-	case GREEN_RED:
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_7, SET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, SET);
-
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11,RESET);
-		break;
-	case YELLOW_RED:
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_9, SET);
-		HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, RESET);
-		break;
-	default:
-		break;
-	}
-}
