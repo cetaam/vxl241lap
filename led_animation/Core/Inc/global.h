@@ -8,6 +8,12 @@
 #ifndef INC_GLOBAL_H_
 #define INC_GLOBAL_H_
 
+#include "main.h"
+#include "timer.h"
+#include "button.h"
+#include "traffic_light.h"
+#include "led7_seg.h"
+
 #define PRESSED 0
 #define NORMAL 1
 
@@ -38,12 +44,6 @@
 #define	YELLOW_RED 	5
 
 
-
-#include "main.h"
-#include "timer.h"
-#include "button.h"
-#include "traffic_light.h"
-#include "led7_seg.h"
 
 
 extern int status;

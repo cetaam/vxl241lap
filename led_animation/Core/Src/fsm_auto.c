@@ -27,14 +27,14 @@ void fsm_auto_run(){
 			set_timer(0, 24);
 			led_index=0;
 
-		if(timer_flag[1]==1){
-			status=AUTO_RED_YELLOW;
-			updateClockBuffer(--counter[2], counter[2]);
-			set_timer(1, time_yellow);
-			set_timer(2,100);
-			set_timer(0, 24);
-			led_traffic(RED_YELLOW);
-			}
+			if(timer_flag[1]==1){
+				status=AUTO_RED_YELLOW;
+				updateClockBuffer(--counter[2], counter[2]);
+				set_timer(1, time_yellow);
+				set_timer(2,100);
+				set_timer(0, 24);
+				led_traffic(RED_YELLOW);
+				}
 		}
 		break;
 	case AUTO_RED_YELLOW:
@@ -44,15 +44,15 @@ void fsm_auto_run(){
 			set_timer(2, 100);
 			set_timer(0, 24);
 			led_index=0;
-		if(timer_flag[1]==1){
-			status = AUTO_GREEN_RED;
-			counter_reset();
-			updateClockBuffer(--counter[1], --counter[0]);
-			set_timer(1, time_green);
-			set_timer(2,100);
-			set_timer(0, 24);
-			led_traffic(GREEN_RED);
-		}
+			if(timer_flag[1]==1){
+				status = AUTO_GREEN_RED;
+				counter_reset();
+				updateClockBuffer(--counter[1], --counter[0]);
+				set_timer(1, time_green);
+				set_timer(2,100);
+				set_timer(0, 24);
+				led_traffic(GREEN_RED);
+			}
 		}
 
 		break;
@@ -63,14 +63,14 @@ void fsm_auto_run(){
 			set_timer(2, 100);
 			set_timer(0, 24);
 			led_index=0;
-		if(timer_flag[1]==1){
-			status = AUTO_YELLOW_RED;
-			updateClockBuffer(--counter[2], counter[2]);
-			set_timer(1, time_yellow);
-			set_timer(2,100);
-			set_timer(0, 24);
-			led_traffic(YELLOW_RED);
-		}
+			if(timer_flag[1]==1){
+				status = AUTO_YELLOW_RED;
+				updateClockBuffer(--counter[2], counter[2]);
+				set_timer(1, time_yellow);
+				set_timer(2,100);
+				set_timer(0, 24);
+				led_traffic(YELLOW_RED);
+			}
 		}
 
 		break;
@@ -80,15 +80,15 @@ void fsm_auto_run(){
 			set_timer(2, 100);
 			set_timer(0, 24);
 			led_index=0;
-		if(timer_flag[1]==1){
-			status = AUTO_RED_GREEN;
-			counter_reset();
-			updateClockBuffer(--counter[0], --counter[1]);
-			set_timer(1,time_green);
-			set_timer(2,100);
-			set_timer(0, 24);
-			led_traffic(RED_GREEN);
-		}
+			if(timer_flag[1]==1){
+				status = AUTO_RED_GREEN;
+				counter_reset();
+				updateClockBuffer(--counter[0], --counter[1]);
+				set_timer(1,time_green);
+				set_timer(2,100);
+				set_timer(0, 24);
+				led_traffic(RED_GREEN);
+			}
 
 		}
 		break;
