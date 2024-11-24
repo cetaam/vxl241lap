@@ -16,6 +16,7 @@
 #include "fsm_auto.h"
 #include "fsm_manual.h"
 #include "fsm_setting.h"
+#include "scheduler.h"
 
 #define PRESSED 0
 #define NORMAL 1
