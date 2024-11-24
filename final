@@ -1,0 +1,203 @@
+[33mcommit 2789ce51ccf552ded9293119c45ea63d555defc6[m[33m ([m[1;36mHEAD -> [m[1;32mlap3[m[33m, [m[1;31morigin/lap3[m[33m)[m
+Author: cetaam <169129052+cetaam@users.noreply.github.com>
+Date:   Sat Nov 9 13:02:53 2024 +0700
+
+    Add files via upload
+
+[33mcommit 4872b7554ea48640b2c00e937289491a6f421f66[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Tue Nov 5 16:39:11 2024 +0700
+
+    final
+
+[33mcommit e75648dab1bfe8c6224bfc2d18db74f3cbb896d8[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Tue Nov 5 15:56:40 2024 +0700
+
+    a
+
+[33mcommit 5f750c731fa304a781e8bb51a2781fe09525f517[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Tue Nov 5 15:51:24 2024 +0700
+
+    abv
+
+[33mcommit 56d669f2a47095e14f95be235de64853857695c8[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Tue Nov 5 15:32:43 2024 +0700
+
+    idk
+
+[33mcommit 45bee04dfdf741694ed156db1facd81d666c17a2[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Mon Nov 4 20:48:59 2024 +0700
+
+    fthiss
+
+[33mcommit 93d12293797953281c76d2d79d7d8d35b84a86ed[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Mon Nov 4 17:44:56 2024 +0700
+
+    9 warning
+
+[33mcommit c5228aa5bb46c9ad76a161f5486f650de2d503c8[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Mon Nov 4 12:54:11 2024 +0700
+
+    timer restart
+
+[33mcommit e7ce6b338d0bbdcce73564cc0ca0d24dfafb41c9[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Mon Nov 4 12:45:04 2024 +0700
+
+    syncronized
+
+[33mcommit 4329a04e50b5e805054fd3cd33ccbe89a9529534[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Mon Nov 4 10:28:45 2024 +0700
+
+    done setting
+
+[33mcommit cf21c2e456148dd8b15c2a7873e2f2c8caed89d5[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sun Nov 3 17:01:58 2024 +0700
+
+    fthiss
+
+[33mcommit 68c86df325528c2b3de559398c0aace1382e1a94[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sun Nov 3 08:03:16 2024 +0700
+
+    b
+
+[33mcommit 292cd01cb39e141bdbe1605e3e373ae3bec3c0b6[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sun Nov 3 08:00:31 2024 +0700
+
+    a
+
+[33mcommit 3627e6be51f37a880033d53967a6af238910c2e9[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sun Nov 3 07:56:37 2024 +0700
+
+    b
+
+[33mcommit d6a8cf4ca7afc1f9cd8b7ac3e30e5a83b64aebbe[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sun Nov 3 07:55:52 2024 +0700
+
+    ignore .medata
+
+[33mcommit 7091c1c5a8589c20fd5e570f4a55c551e9576a34[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sat Nov 2 22:56:33 2024 +0700
+
+    open git bash at wrong location and im sutck with .metadata bs
+
+[33mcommit b74a622cd5b0e753d5e993910970224dbd0af23c[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sat Nov 2 22:51:07 2024 +0700
+
+    trash code-fix soon
+
+[33mcommit c8fb17400f66a26bd804b70957c602f16210da8a[m[33m ([m[1;32mlap3_medata[m[33m, [m[1;32mlap3_beforemedata[m[33m)[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sat Nov 2 16:30:51 2024 +0700
+
+    fixing updateClockBuffer
+
+[33mcommit 6fc2076e3becba06b36ed101385df960f28dcb27[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sat Nov 2 14:43:29 2024 +0700
+
+    setting and led lights
+
+[33mcommit ce87108a600d973d62b71a08d122e203bb54d1b0[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Fri Nov 1 23:45:56 2024 +0700
+
+    manual cases finalized
+
+[33mcommit 27082f2463002ce222c0278054ef357fd29ffb6e[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Fri Nov 1 15:53:27 2024 +0700
+
+    manual coding
+
+[33mcommit 61ac256ea57557601fd2ed922c643743592a0137[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Fri Nov 1 14:27:22 2024 +0700
+
+    finnish auto
+
+[33mcommit e7c162666a36f973f727bae048654fd363500b92[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Thu Oct 31 17:32:17 2024 +0700
+
+    auto cases
+
+[33mcommit 0704e4fd286a4dc22e8d05a6c6aee86fbedbe7dd[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Thu Oct 31 16:43:57 2024 +0700
+
+    define cases
+
+[33mcommit 492841829d91e4b41220d252d5d561ed0c5b0238[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Wed Oct 30 17:18:56 2024 +0700
+
+    30/10/24
+
+[33mcommit b5b883697bbc0ddbe4162ef13f0ed81d78af4792[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Wed Oct 30 14:50:10 2024 +0700
+
+    add .h.c
+
+[33mcommit 4615744bb91477659e368f6baf9f53dfd9b83562[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Wed Oct 30 13:16:32 2024 +0700
+
+    switch
+
+[33mcommit cef64b590b291deab7128ad6e7d68400a6e58c65[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sun Oct 20 14:36:35 2024 +0700
+
+    ex8
+
+[33mcommit 23b454b52d86bea178c22901a3784cb1b6797f2c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m, [m[1;32mEX11[m[33m)[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sat Sep 14 19:45:49 2024 +0700
+
+    EX1
+
+[33mcommit 6630dbcb885abce7319057e336f34edb1c3d5dc7[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sat Sep 14 15:19:14 2024 +0700
+
+    M
+
+[33mcommit 8984a26a81317ec74ee1a8f5a71571c8f1dffb86[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sat Sep 14 15:13:48 2024 +0700
+
+    DEBUG
+
+[33mcommit 70c300a89734dd6c60a876ec860e9e31a55aa374[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sat Sep 14 14:50:48 2024 +0700
+
+    Update workbench.xmi
+
+[33mcommit 512e8b74bdcdfa2fff1860cd639bb5f02dc0d937[m
+Author: cetaam <tam.tranhcmut@hcmut.edu.vn>
+Date:   Sat Sep 14 14:45:51 2024 +0700
+
+    start
+
+[33mcommit 3cc747af34a9f756e31b755d3a10669191fc8432[m
+Author: cetaam <169129052+cetaam@users.noreply.github.com>
+Date:   Sat Sep 14 14:32:16 2024 +0700
+
+    Initial commit

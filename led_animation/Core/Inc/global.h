@@ -13,6 +13,9 @@
 #include "button.h"
 #include "traffic_light.h"
 #include "led7_seg.h"
+#include "fsm_auto.h"
+#include "fsm_manual.h"
+#include "fsm_setting.h"
 
 #define PRESSED 0
 #define NORMAL 1
