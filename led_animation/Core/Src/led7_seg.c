@@ -160,3 +160,6 @@ void reset7seg(){
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_5, SET);
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, SET);
 }
+void scanled(){
+	update7SEG(led_index++);
+}

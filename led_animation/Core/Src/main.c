@@ -103,13 +103,15 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
+  SCH_Init();
+  SCH_Add_Task(fsm_auto_run, 0, 10);
+
+
   while (1)
   {
 
-		 fsm_auto_run();
-		 fsm_manual_run();
-		 fsm_setting_run();
 
+	  SCH_Dispatch_Task();
 
     /* USER CODE END WHILE */
 
@@ -250,14 +252,7 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
-	timerrun(0);
-	timerrun(1);
-	timerrun(2);
-	timerrun(3);
-	timerrun(5);
-	timerrun(6);
-	timerrun(7);
-	getkeyInput();
+	SCH_Update();
 }
 
 /* USER CODE END 4 */
