@@ -28,16 +28,24 @@ void fsm_auto_run(){
 			SCH_Delete_Task(auto_red_yellow_run);
 			SCH_Delete_Task(scanled);
 			SCH_Delete_Task(per_second);
+			SCH_Delete_Task(fsm_auto_run);
 
 			SCH_Add_Task(auto_red_green_run, time_manual, 0);
 			SCH_Add_Task(per_second, time_manual, 1000);
 			SCH_Add_Task(scanled, time_manual, 250);
 
 			status += 30;//correspond status in manual
-			counter[0]=(time_green+time_yellow)/100;
-			counter[1]=time_green/100;
+			counter[0]=(time_green+time_yellow)/1000;
+			counter[1]=time_green/1000;
 			reset7seg();
 			return;
+		}
+		if(isButtonPress(2)){	//SWITCH TO SETTING
+			SCH_Delete_Task(auto_red_yellow_run);
+			SCH_Delete_Task(per_second);
+
+			resetled();
+			status= SET_GREEN;
 		}
 		break;
 	case AUTO_RED_YELLOW:
@@ -46,16 +54,24 @@ void fsm_auto_run(){
 			SCH_Delete_Task(auto_green_red_run);
 			SCH_Delete_Task(scanled);
 			SCH_Delete_Task(per_second);
+			SCH_Delete_Task(fsm_auto_run);
 
 			SCH_Add_Task(auto_red_yellow_run, time_manual, 0);
 			SCH_Add_Task(per_second, time_manual, 1000);
 			SCH_Add_Task(scanled, time_manual, 250);
 
 			status += 30;//correspond status in manual
-			counter[0]=time_yellow/100;
-			counter[1]=time_yellow/100;
+			counter[0]=time_yellow/1000;
+			counter[1]=time_yellow/1000;
 			reset7seg();
 			return;
+		}
+		if(isButtonPress(2)){	//SWITCH TO SETTING
+			SCH_Delete_Task(auto_green_red_run);
+			SCH_Delete_Task(per_second);
+
+			resetled();
+			status= SET_GREEN;
 		}
 		break;
 
@@ -65,16 +81,24 @@ void fsm_auto_run(){
 			SCH_Delete_Task(auto_yellow_red_run);
 			SCH_Delete_Task(scanled);
 			SCH_Delete_Task(per_second);
+			SCH_Delete_Task(fsm_auto_run);
 
 			SCH_Add_Task(auto_green_red_run, time_manual, 0);
 			SCH_Add_Task(per_second, time_manual, 1000);
 			SCH_Add_Task(scanled, time_manual, 250);
 
 			status += 30;//correspond status in manual
-			counter[0]=time_green/100;
-			counter[1]=(time_green+time_yellow)/100;
+			counter[0]=time_green/1000;
+			counter[1]=(time_green+time_yellow)/1000;
 			reset7seg();
 			return;
+		}
+		if(isButtonPress(2)){	//SWITCH TO SETTING
+			SCH_Delete_Task(auto_yellow_red_run);
+			SCH_Delete_Task(per_second);
+
+			resetled();
+			status= SET_GREEN;
 		}
 
 		break;
@@ -84,29 +108,31 @@ void fsm_auto_run(){
 			SCH_Delete_Task(auto_red_green_run);
 			SCH_Delete_Task(scanled);
 			SCH_Delete_Task(per_second);
+			SCH_Delete_Task(fsm_auto_run);
 
 			SCH_Add_Task(auto_yellow_red_run, time_manual, 0);
 			SCH_Add_Task(per_second, time_manual, 1000);
 			SCH_Add_Task(scanled, time_manual, 250);
 
 			status += 30;//correspond status in manual
-			counter[0]=time_yellow/100;
-			counter[1]=time_yellow/100;
+			counter[0]=time_yellow/1000;
+			counter[1]=time_yellow/1000;
 			reset7seg();
 			return;
+		}
+		if(isButtonPress(2)){	//SWITCH TO SETTING
+			SCH_Delete_Task(auto_red_green_run);
+			SCH_Delete_Task(per_second);
+
+			resetled();
+			status= SET_GREEN;
 		}
 		break;
 	default:
 		return;
 	}
 
-	if(isButtonPress(2)){	//SWITCH TO SETTING
-		SCH_Delete_Task(function);
-		SCH_Delete_Task(per_second);
 
-		resetled();
-		status= SET_GREEN;
-	}
 
 }
 void per_second(){
@@ -119,37 +145,31 @@ void per_second(){
 void auto_red_green_run(){
 	status=AUTO_RED_GREEN;
 	led_traffic(RED_GREEN);
-	counter[0]=(time_green+time_yellow)/100;
-	counter[1]=time_green/100;
+	counter[0]=(time_green+time_yellow)/1000;
+	counter[1]=time_green/1000;
 	SCH_Add_Task(auto_red_yellow_run, time_green, 0);
 
 }
 void auto_red_yellow_run(){
 	status=AUTO_RED_YELLOW;
 	led_traffic(RED_YELLOW);
-	counter[0]=time_yellow/100;
-	counter[1]=time_yellow/100;
+	counter[0]=time_yellow/1000;
+	counter[1]=time_yellow/1000;
 	SCH_Add_Task(auto_green_red_run, time_yellow, 0);
 }
 void auto_green_red_run(){
 	status=AUTO_GREEN_RED;
 	led_traffic(GREEN_RED);
-	counter[0]=time_green/100;
-	counter[1]=(time_green+time_yellow)/100;
+	counter[0]=time_green/1000;
+	counter[1]=(time_green+time_yellow)/1000;
 	SCH_Add_Task(auto_yellow_red_run, time_green, 0);
 }
 void auto_yellow_red_run(){
 	status=AUTO_YELLOW_RED;
 	led_traffic(YELLOW_RED);
 
-	counter[0]=time_yellow/100;
-	counter[1]=time_yellow/100;
+	counter[0]=time_yellow/1000;
+	counter[1]=time_yellow/1000;
 	SCH_Add_Task(auto_red_green_run, time_yellow, 0);
 }
-void counter_reset(){
-	counter[1]=time_green/100;
-	counter[2]=time_yellow/100;
-	counter[0]=counter[1]+counter[2];
 
-
-	}

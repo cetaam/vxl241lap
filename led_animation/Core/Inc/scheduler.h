@@ -30,9 +30,6 @@ void SCH_Init(void);
 void SCH_Add_Task (void (*function) (), uint32_t, uint32_t);
 void SCH_Update(void);
 void SCH_Dispatch_Task(void);
-uint8_t SCH_Is_Task_Exist(void (*function)());
 uint8_t SCH_Delete_Task(void (*function)() );
-void delete_ListRun();
-void add_ListRun();
 
 #endif /* INC_SCHEDULER_H_ */
