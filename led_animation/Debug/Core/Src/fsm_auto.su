@@ -1,6 +1,6 @@
 fsm_auto.c:11:6:fsm_auto_run	8	static
-fsm_auto.c:138:6:per_second	8	static
-fsm_auto.c:145:6:auto_red_green_run	8	static
-fsm_auto.c:153:6:auto_red_yellow_run	8	static
-fsm_auto.c:160:6:auto_green_red_run	8	static
-fsm_auto.c:167:6:auto_yellow_red_run	8	static
+fsm_auto.c:53:6:per_second	8	static
+fsm_auto.c:59:6:auto_red_green_run	8	static
+fsm_auto.c:68:6:auto_red_yellow_run	8	static
+fsm_auto.c:77:6:auto_green_red_run	8	static
+fsm_auto.c:86:6:auto_yellow_red_run	8	static

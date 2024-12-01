@@ -67,7 +67,7 @@ void SCH_Dispatch_Task(void){
 	if (list.head == NULL) {
 		return;
 	}
-	if(list.head->Delay <= 0){
+	if(list.head->Delay == 0){
 		list.head->pTask();
 		sTask * temp = list.head;
 		list.head = list.head->next;

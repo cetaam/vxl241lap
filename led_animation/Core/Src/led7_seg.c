@@ -161,5 +161,6 @@ void reset7seg(){
 	HAL_GPIO_WritePin(GPIOB, GPIO_PIN_6, SET);
 }
 void scanled(){
+	if(led_index>=4) led_index=0;
 	update7SEG(led_index++);
 }

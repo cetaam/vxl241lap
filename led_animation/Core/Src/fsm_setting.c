@@ -14,7 +14,7 @@ int increased=0;
 void fsm_setting_run(){
 	switch(status){
 	case SET_GREEN://green<=98
-		led_setting(SET_GREEN);
+
 		if(isButtonPress(1)){
 			increased++;
 			temp+=1;
@@ -26,8 +26,8 @@ void fsm_setting_run(){
 		}
 		if(isButtonPress(0)){
 
-			status = SET_YELLOW;
-			temp*=100;
+
+			temp*=1000;
 			//SWAP
 			temp = temp^time_green;
 			time_green = temp^time_green;
@@ -38,12 +38,15 @@ void fsm_setting_run(){
 			}
 			increased=0;
 			temp=0;
+			updateClockBuffer(0, temp);
+			led_traffic(SET_YELLOW);
+			status = SET_YELLOW;
 		}
 
 
 		break;
 	case SET_YELLOW://yellow<=99-green
-		led_setting(SET_YELLOW);
+
 		if(isButtonPress(1)){
 			increased++;
 			temp+=1;
@@ -53,9 +56,9 @@ void fsm_setting_run(){
 			updateClockBuffer(0, temp);
 		}
 		if(isButtonPress(0)){
-			status =INIT;
-			resetled();
-			temp*=100;
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8, RESET);
+			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11, RESET);
+			temp*=1000;
 			//SWAP
 			temp = temp^time_yellow;
 			time_yellow = temp^time_yellow;
@@ -66,57 +69,21 @@ void fsm_setting_run(){
 			}
 			increased=0;
 			temp=0;
+			SCH_Delete_Task(scanled);
+			led_index=0;
+
+			SCH_Add_Task(previous_task, 0, 0);//auto_previous_state_run
+			SCH_Add_Task(per_second, 10, 1000);
+			SCH_Add_Task(scanled, 10, 250);
 
 		}
-
-
-		break;
-	case SET_MANUAL:
-		if(isButtonPress(1)){
-			increased++;
-			temp++;
-			if(temp>99){
-				temp=0;
-			}
-			updateClockBuffer(0, temp);
-		}
-		if(isButtonPress(0)){
-
-			status = MANUAL_RED_GREEN;
-			temp*=100;
-			//SWAP
-			temp = temp^time_manual;
-			time_manual = temp^time_manual;
-			temp = temp^time_manual;
-			if(increased<1){
-				time_manual=temp;
-			}
-			set_timer(1, time_manual);
-			reset7seg();
-			increased=0;
-			temp=0;
-		}
-
-
-
 		break;
 	default:
 		return;
-
 
 	}
 	if(isButtonPress(2)){
 			increased=0;
 				temp=0;
 			}
-	if(timer_flag[2]==1){
-		updateClockBuffer(0, temp);
-		set_timer(2, 100);
-		set_timer(0, 24);
-		led_index=0;
 	}
-	if(timer_flag[0]==1){
-		update7SEG(led_index++);
-		set_timer(0, 24);
-	}
-}

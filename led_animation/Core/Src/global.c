@@ -15,4 +15,6 @@ int time_green=3000;
 int time_yellow=2000;
 int time_manual=2000;
 
+void (*waiting_task)()=NULL;
+void (*previous_task)()=NULL;
 

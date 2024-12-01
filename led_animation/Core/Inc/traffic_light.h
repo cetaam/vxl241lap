@@ -14,7 +14,7 @@
 
 
 void led_traffic(int i);
-void led_traffic_back(int i);
-void led_setting(int i);
+
+
 
 #endif /* INC_TRAFFIC_LIGHT_H_ */

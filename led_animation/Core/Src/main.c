@@ -105,7 +105,13 @@ int main(void)
 
   SCH_Init();
   SCH_Add_Task(fsm_auto_run, 0, 10);
-
+  SCH_Add_Task(fsm_manual_run, 10, 10);
+  SCH_Add_Task(fsm_setting_run, 10, 10);
+  SCH_Add_Task(getkeyInput, 10, 10);
+  SCH_Add_Task(auto_red_green_run, 10, 0);
+  SCH_Add_Task(per_second, 20, 1000);
+  SCH_Add_Task(scanled, 20, 250);
+  led_traffic(RED_GREEN);
 
   while (1)
   {
